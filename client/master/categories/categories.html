@@ -1,0 +1,69 @@
+<template name="categories">
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-4">
+
+			{{#if edit_mode}}
+				{{> edit_category}}
+			{{else}}
+				{{> add_category}}
+			{{/if}}
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-8">
+			<table>
+				<thead>					
+			    	<tr>
+			    		<th>Sr.</th>		    		
+			    		<th>Category</th>		    		
+			    	</tr>
+				</thead>
+				<tbody>
+					{{#each categories}}
+		      			{{> category_list}}
+			      	{{/each}}
+				</tbody>		      	
+		    </table>
+		</div>
+	</div>
+</template>
+
+<template name="category_list">
+	<tr>
+		<td width="20%">**</td>
+		<td width="60%">{{name}}</td>
+		<td width="10%">
+			<button type="button" class="btn btn-info edit">Update</button>
+		</td>
+		<td width="10%">
+			<button type="button" class="btn btn-danger remove">Remove</button>
+		</td>
+	</tr>
+</template>
+
+<template name="add_category">
+	<form action="#" method="POST" role="form" class="frm_category">
+		<legend>Category</legend>			
+
+		<div class="form-group">
+			<label for="name">Category:</label>
+			<input type="text" class="form-control" id="name" placeholder="Enter Category">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Add New</button>
+		<button type="reset" class="btn btn-normal">Cancel</button>
+	</form>
+</template>
+
+<template name="edit_category">
+	<form action="#" method="POST" role="form" class="frm_category_edit">
+		<input type="hidden" id="category_id" name="category_id" value="{{category._id}}">
+		<legend>Category</legend>			
+
+		<div class="form-group">
+			<label for="name">Category:</label>
+			<input type="text" class="form-control" id="name" placeholder="Enter Category" value="{{category.name}}">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Update</button>
+		<button type="reset" class="btn btn-normal cancel">Cancel</button>
+	</form>
+</template>

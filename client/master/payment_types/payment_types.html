@@ -1,0 +1,30 @@
+<template name="PaymentTypes">
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6">
+			<form action="#" method="POST" role="form" class="frm_payment_types">
+				<legend>Payment Type</legend>			
+
+				<div class="form-group">
+					<label for="name">Type:</label>
+					<input type="text" class="form-control" id="name" placeholder="Enter Payment Type">
+				</div>
+
+				<button type="submit" class="btn btn-primary">Add New</button>
+			</form>
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-6">
+			<table>
+		    	<tr>
+		    		<th>Payment Types</th>		    		
+		    	</tr>
+	      		{{#each payment_types}}
+	      			<tr>
+	      				<td width="100%">{{name}}</td>
+	      			</tr>
+	      			
+		      	{{/each}}
+		      	
+		    </table>
+		</div>
+	</div>
+</template>

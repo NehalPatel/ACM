@@ -1,0 +1,40 @@
+<template name="menubar">
+	
+	<!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">ACM</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="{{pathFor 'home'}}">Home</a></li>
+              <li><a href="{{pathFor 'expense'}}">Expenses</a></li>
+              <li><a href="{{pathFor 'income'}}">Income</a></li>
+              <li><a href="{{pathFor 'reminder'}}">Reminder</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Master <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="{{pathFor 'categories'}}">Categories</a></li>
+                  <li><a href="{{pathFor 'payment_types'}}">Payment Types</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Accounts</li>
+                  <li><a href="#">Add Expense Account</a></li>
+                  <li><a href="#">Add Income Account</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{pathFor 'login'}}">Login</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+</template>
